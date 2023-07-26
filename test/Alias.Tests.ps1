@@ -1,0 +1,40 @@
+﻿#Requires -Modules BuildHelpers, Pester
+
+BeforeDiscovery {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        'PSUseDeclaredVarsMoreThanAssigments', '', Scope='*', Target='SuppressImportModule'
+    )]
+    $SuppressImportModule = $false
+    . $PSScriptRoot\Shared.ps1
+
+    $ModuleInfo = Get-Module $ModuleName
+
+    $ExportedAlias = foreach ($alias in $ModuleInfo.ExportedAliases.Values) {
+        @{
+            Name = $alias.Name
+        }
+    }
+    if (-not $ExportedAlias) {
+        $scriptName = Split-Path -Path $PSScriptRoot -Leaf
+        Write-Warning -Message ("{0}: Module {1} ({2}) does not export any aliases." -f $scriptName, $ModuleInfo.Name, $ModuleInfo.Version)
+    }
+}
+
+Describe "Exported aliases for module $ModuleName" -Tags @('MetaTest') {
+    Context 'Alias "<name>"' -Foreach $ExportedAlias {
+        BeforeEach {
+            $aliasToTest = Get-Alias $name -ErrorAction SilentlyContinue
+        }
+        It 'Exists' {
+            $aliasToTest | Should -Not -BeNullOrEmpty
+        }
+
+        It 'Has exported name' {
+            $aliasToTest.Name | Should -Be $Name
+        }
+
+        It 'Has value' {
+            $aliasToTest.ResolvedCommandName -or $aliasToTest.Definition | Should -Be $True
+        }
+    }
+}
