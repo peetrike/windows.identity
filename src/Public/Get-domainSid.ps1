@@ -3,7 +3,6 @@
     [CmdletBinding(
         DefaultParameterSetName = 'Custom'
     )]
-    [OutputType([Security.Principal.SecurityIdentifier])]
     param (
             [Parameter(
                 ParameterSetName = 'Computer'
@@ -53,5 +52,3 @@
         0
     )
 }
-
-Get-DomainSid
