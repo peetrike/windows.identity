@@ -2,65 +2,43 @@
 
 ## about_windows.identity
 
-```
-ABOUT TOPIC NOTE:
-The first header of the about topic should be the topic name.
-The second header contains the lookup name used by the help system.
-
-IE:
-# Some Help Topic Name
-## SomeHelpTopicFileName
-
-This will be transformed into the text file
-as `about_SomeHelpTopicFileName`.
-Do not include file extensions.
-The second header should have no spaces.
-```
-
 # SHORT DESCRIPTION
 
 PowerShell module for windows identities
 
-```
-ABOUT TOPIC NOTE:
-About topics can be no longer than 80 characters wide when rendered to text.
-Any topics greater than 80 characters will be automatically wrapped.
-The generated about topic will be encoded UTF-8.
-```
-
 # LONG DESCRIPTION
 
-{{ Long Description Placeholder }}
-
-## Optional Subtopics
-
-{{ Optional Subtopic Placeholder }}
+This module contains functions to get Security IDs of different identities or to
+convert Security IDs back to account names
 
 # EXAMPLES
 
-{{ Code or descriptive examples of how to leverage the functions described. }}
+```powershell
+Get-CurrentUser
+```
+
+This example returns identity of currently logged on user
+
+```powershell
+Get-CimInstance -ClassName Win32_UserProfile |
+    Select-Object -First 1 |
+    Get-SidIdentity
+```
+
+This example converts first user profile owner Sid to account name
 
 # NOTE
 
-{{ Note Placeholder - Additional information that a user needs to know.}}
-
-# TROUBLESHOOTING NOTE
-
-{{ Troubleshooting Placeholder - Warns users of bugs}}
-
-{{ Explains behavior that is likely to change with fixes }}
+PowerShell 2.0 does not return claims with current user identity.
+So `Get-CurrentUser -Claims` returns nothing when run in PowerShell 2.0.
 
 # SEE ALSO
 
-{{ See also placeholder }}
-
-{{ You can also list related articles, blogs, and video URLs. }}
+WindowsIdentity type documentation:
+https://learn.microsoft.com/dotnet/api/System.Security.Principal.WindowsIdentity
 
 # KEYWORDS
 
-{{List alternate names or titles for this topic that readers might use.}}
-
-- {{ Keyword Placeholder }}
-- {{ Keyword Placeholder }}
-- {{ Keyword Placeholder }}
-- {{ Keyword Placeholder }}
+- Security ID
+- Sid
+- Account
