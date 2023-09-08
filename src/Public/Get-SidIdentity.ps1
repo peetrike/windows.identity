@@ -7,10 +7,14 @@
                 ValueFromPipelineByPropertyName = $true
             )]
             [Security.Principal.SecurityIdentifier]
-        $Sid = [Security.Principal.WindowsIdentity]::GetCurrent().User
+        $Sid
     )
 
     process {
-        $Sid.Translate([Security.Principal.NTAccount]).Value
+        if ($Sid) {
+            $Sid.Translate([Security.Principal.NTAccount]).Value
+        } else {
+            [Security.Principal.WindowsIdentity]::GetCurrent().Name
+        }
     }
 }
