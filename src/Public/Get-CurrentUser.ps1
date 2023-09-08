@@ -1,14 +1,30 @@
 ﻿function Get-CurrentUser {
     [Alias('whoami')]
     [OutputType([Security.Principal.WindowsIdentity])]
-    [CmdletBinding()]
+    #[OutputType([Security.Claims.Claim], ParameterSetName = 'Claims')]
+    [OutputType([PSCustomObject], ParameterSetName = ('Privieges', 'Groups'))]
+    [CmdletBinding(
+        DefaultParameterSetName = 'All'
+    )]
     param (
+            [Parameter(
+                ParameterSetName = 'Groups'
+            )]
             [switch]
         $Groups,
+            [Parameter(
+                ParameterSetName = 'User'
+            )]
             [switch]
         $User,
+            [Parameter(
+                ParameterSetName = 'Claims'
+            )]
             [switch]
         $Claims,
+            [Parameter(
+                ParameterSetName = 'Privileges'
+            )]
             [switch]
         $Privileges
     )
