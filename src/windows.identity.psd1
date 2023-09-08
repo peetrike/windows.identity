@@ -50,11 +50,16 @@
 
     PrivateData       = @{
         PSData = @{
-            Tags         = @()
+            Tags         = @(
+                'identity'
+                'Windows'
+                'PSEdition_Core'
+                'PSEdition_Desktop'
+            )
 
-            LicenseUri   = ''
-            ProjectUri   = ''
-            ReleaseNotes = ''
+            LicenseUri   = 'https://github.com/peetrike/windows.identity/blob/main/LICENSE'
+            ProjectUri   = 'https://github.com/peetrike/windows.identity'
+            ReleaseNotes = 'https://github.com/peetrike/windows.identity/blob/main/CHANGELOG.md'
 
             # A URL to an icon representing this module.
             # IconUri = ''
