@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+## [0.0.2] 2023-07-26
+
+### Added
+
+- Get-CurrentUser: now works better in remote session.
+
 ## [0.0.1] 2023-07-26
 
 ### Added
