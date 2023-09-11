@@ -1,4 +1,5 @@
 ﻿function Get-ComputerSid {
+    # .EXTERNALHELP windows.identity-help.xml
     [OutputType([Security.Principal.SecurityIdentifier])]
     [CmdletBinding()]
     param ()

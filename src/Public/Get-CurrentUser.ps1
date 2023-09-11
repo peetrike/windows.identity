@@ -1,7 +1,7 @@
 ﻿function Get-CurrentUser {
+    # .EXTERNALHELP windows.identity-help.xml
     [Alias('whoami')]
     [OutputType([Security.Principal.WindowsIdentity])]
-    #[OutputType([Security.Claims.Claim], ParameterSetName = 'Claims')]
     [OutputType([PSCustomObject], ParameterSetName = ('Privieges', 'Groups'))]
     [CmdletBinding(
         DefaultParameterSetName = 'All'
