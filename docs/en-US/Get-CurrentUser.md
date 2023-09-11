@@ -154,4 +154,4 @@ User Groups or privileges
 
 [Get-AccountSid](Get-AccountSid.md)
 
-[Get-SidIdentity](Get-SidIdentity.md)
+[Get-AccountName](Get-AccountName.md)
