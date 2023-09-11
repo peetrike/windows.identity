@@ -11,7 +11,7 @@ Locale: en-US
 PowerShell module for windows identities
 
 ## windows.identity Cmdlets
-### [Get-SidIdentity](Get-SidIdentity.md)
+### [Get-AccountName](Get-AccountName.md)
 Converts provided Security ID (Sid) to account name
 
 ### [Get-AccountSid](Get-AccountSid.md)
