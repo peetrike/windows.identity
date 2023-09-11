@@ -1,5 +1,6 @@
-﻿function Get-SidIdentity {
+﻿function Get-AccountName {
     [OutputType([string])]
+    [Alias('Get-SidIdentity')]
     [CmdletBinding()]
     param (
             [parameter(

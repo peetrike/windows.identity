@@ -11,6 +11,9 @@ Locale: en-US
 PowerShell module for windows identities
 
 ## windows.identity Cmdlets
+### [Get-SidIdentity](Get-SidIdentity.md)
+Converts provided Security ID (Sid) to account name
+
 ### [Get-AccountSid](Get-AccountSid.md)
 Retrives Security ID of given security principal
 
@@ -22,7 +25,4 @@ Provides currently logged on user credential
 
 ### [Get-DomainSid](Get-DomainSid.md)
 Returns specified domain Security Id (Sid)
-
-### [Get-SidIdentity](Get-SidIdentity.md)
-Converts provided Security ID (Sid) to account name
 
