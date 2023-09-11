@@ -2,7 +2,7 @@
     # .EXTERNALHELP windows.identity-help.xml
     [Alias('whoami')]
     [OutputType([Security.Principal.WindowsIdentity])]
-    [OutputType([PSCustomObject], ParameterSetName = ('Privieges', 'Groups'))]
+    [OutputType([PSCustomObject], ParameterSetName = ('Privieges', 'Groups', 'User'))]
     [CmdletBinding(
         DefaultParameterSetName = 'All'
     )]
@@ -34,14 +34,19 @@
     switch ($PSBoundParameters.Keys) {
         'Groups' {
             $Identity.Groups | ForEach-Object {
-                @{
-                    Name = Get-SidIdentity -Sid $_
-                    SID  = $_
-                } | New-PSObject
+                $Sid = [Security.Principal.SecurityIdentifier] $_
+                New-Object -TypeName PSObject -Property @{
+                    Name = $Sid.Translate([Security.Principal.NTAccount]).Value
+                    Sid  = $Sid
+                }
             }
         }
         'User' {
-            $Identity | Select-Object -Property Name, Sid
+            #$Identity | Select-Object -Property Name, User
+            New-Object -TypeName PSObject -Property @{
+                Name = $Identity.Name
+                SID  = $Identity.User
+            }
         }
         'Claims' {
             $Identity.UserClaims
