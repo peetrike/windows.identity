@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-SidIdentity
+# Get-AccountName
 
 ## SYNOPSIS
 
@@ -14,7 +14,7 @@ Converts provided Security ID (Sid) to account name
 ## SYNTAX
 
 ```
-Get-SidIdentity [[-Sid] <SecurityIdentifier>] [<CommonParameters>]
+Get-AccountName [[-Sid] <SecurityIdentifier>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,7 +26,7 @@ This function converts provided Security ID (Sid) to account name
 ### Example 1
 
 ```powershell
-Get-SidIdentity -Sid S-1-5-32-545
+Get-AccountName -Sid S-1-5-32-545
 ```
 
 This example converts local Users group Sid to account name
@@ -34,17 +34,17 @@ This example converts local Users group Sid to account name
 ### Example 2
 
 ```powershell
-Get-CimInstance -ClassName win32_UserProfile | Select-Object -First 1 | Get-SidIdentity
+$UserName = @{ Name = 'UserName'; Expression = { $_ | Get-AccountName } }
+Get-CimInstance -ClassName Win32_UserProfile | Select-Object LocalPath, $UserName
 ```
 
-This example converts Sid of first user profile to account name
+This example returns user profile paths and usernames.
 
 ## PARAMETERS
 
 ### -Sid
 
-Specifies Security Id to convert.  The default value is currently logged on user
-Sid.
+Specifies Security ID to convert
 
 ```yaml
 Type: SecurityIdentifier
@@ -65,11 +65,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Security.Principal.SecurityIdentifier
 
+The Security ID to convert
+
 ## OUTPUTS
 
 ### System.String
 
-Converted account name
+The converted account name
 
 ## NOTES
 

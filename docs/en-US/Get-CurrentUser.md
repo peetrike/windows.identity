@@ -133,7 +133,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
-
 ## OUTPUTS
 
 ### System.Security.Principal.WindowsIdentity
@@ -154,4 +153,4 @@ User Groups or privileges
 
 [Get-AccountSid](Get-AccountSid.md)
 
-[Get-SidIdentity](Get-SidIdentity.md)
+[Get-AccountName](Get-AccountName.md)

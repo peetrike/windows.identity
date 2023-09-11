@@ -81,4 +81,4 @@ To translate computer name to SID, you should use computers SamAccountName
 
 [Get-CurrentUser](Get-CurrentUser.md)
 
-[Get-SidIdentity](Get-SidIdentity.md)
+[Get-AccountName](Get-AccountName.md)

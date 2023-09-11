@@ -1,5 +1,7 @@
-﻿function Get-SidIdentity {
+﻿function Get-AccountName {
+    # .EXTERNALHELP windows.identity-help.xml
     [OutputType([string])]
+    [Alias('Get-SidIdentity')]
     [CmdletBinding()]
     param (
             [parameter(

@@ -20,9 +20,15 @@ Get-CurrentUser
 This example returns identity of currently logged on user
 
 ```powershell
+Get-AccountSid
+```
+
+This example returns currently logged on user Security ID (Sid)
+
+```powershell
 Get-CimInstance -ClassName Win32_UserProfile |
     Select-Object -First 1 |
-    Get-SidIdentity
+    Get-AccountName
 ```
 
 This example converts first user profile owner Sid to account name

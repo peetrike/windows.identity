@@ -1,4 +1,5 @@
 ﻿function Get-AccountSid {
+    # .EXTERNALHELP windows.identity-help.xml
     [OutputType([Security.Principal.SecurityIdentifier])]
     [Alias('Get-Sid')]
     [CmdletBinding()]
