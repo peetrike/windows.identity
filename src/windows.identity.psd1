@@ -4,9 +4,8 @@
 
     GUID              = '57f17d22-6d4f-4d77-9869-dc7a1072bcce'
 
-    Author            = 'CPG4285'
-    CompanyName       = 'MyCompany'
-    Copyright         = 'Copyright (c) 2023 MyCompany'
+    Author            = 'Peter Wawa'
+    Copyright         = 'Copyright (c) 2023 Peter Wawa'
 
     Description       = 'PowerShell module for windows identities'
 
