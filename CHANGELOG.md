@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+## [0.0.3] 2024-07-01
+
+### Changed
+
+- Get-ComputerSid: uses now Win32 API to get Computer Sid
+
 ## [0.0.2] 2023-07-26
 
 ### Added
