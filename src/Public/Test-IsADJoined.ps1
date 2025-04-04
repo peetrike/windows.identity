@@ -1,10 +1,8 @@
 ﻿function Test-IsADJoined {
+    # .EXTERNALHELP windows.identity-help.xml
+    [OutputType([bool])]
     [CmdletBinding()]
-    param (
-            [Alias('Entra')]
-            [switch]
-        $AzureAD
-    )
+    param ()
 
     # Prepare the P/Invoke signature
     try {
