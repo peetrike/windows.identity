@@ -15,6 +15,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+## [0.1.0] 2025-04-04
+
+### Added
+
+- Test-IsADJoined: function to determine computer AD join status
+- Test-IsEntraJoined: function to determine computer AD join status
+
 ## [0.0.3] 2024-07-01
 
 ### Changed
