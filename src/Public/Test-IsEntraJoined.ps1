@@ -1,8 +1,6 @@
 ﻿function Test-IsEntraJoined {
-    <#
-        .LINK
-            https://github.com/DeployWindowsCom/DeployWindows-Scripts/blob/master/Azure%20AD/Get-AadJoinInformation.ps1
-    #>
+    # .EXTERNALHELP windows.identity-help.xml
+    [OutputType([bool])]
     [CmdletBinding()]
     param (
             [string]
