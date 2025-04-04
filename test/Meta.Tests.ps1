@@ -1,9 +1,13 @@
 ﻿#Requires -Modules Pester
 
-
 Describe 'Text files formatting' -Tags @('MetaTest') {
     BeforeAll {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '', Scope='*', Target='SuppressImportModule')]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            'PSUseDeclaredVarsMoreThanAssignments',
+            '',
+            Scope = '*',
+            Target = 'SuppressImportModule'
+        )]
         $SuppressImportModule = $true
         . $PSScriptRoot\Shared.ps1
 

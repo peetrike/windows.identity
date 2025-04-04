@@ -1,7 +1,12 @@
-﻿#Requires -Modules BuildHelpers, Pester
+﻿#Requires -Modules Pester
 
 BeforeDiscovery {
-    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '', Scope='*', Target='SuppressImportModule')]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        'PSUseDeclaredVarsMoreThanAssignments',
+        '',
+        Scope = '*',
+        Target = 'SuppressImportModule'
+    )]
     $SuppressImportModule = $true
     . $PSScriptRoot\Shared.ps1
 
@@ -10,9 +15,14 @@ BeforeDiscovery {
 
 Describe "Module $moduleName" -Tags @('MetaTest') {
     BeforeAll {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '', Scope='*', Target='SuppressImportModule')]
-        $SuppressImportModule = $true
-            . $PSScriptRoot\Shared.ps1
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            'PSUseDeclaredVarsMoreThanAssignments',
+            '',
+            Scope = '*',
+            Target = 'SuppressImportModule'
+        )]
+            $SuppressImportModule = $true
+        . $PSScriptRoot\Shared.ps1
 
         $manifest = Test-ModuleManifest -Path $manifestPath -ErrorAction SilentlyContinue -WarningAction SilentlyContinue
         $manifestContent = Import-PowerShellDataFile -Path $manifestPath
