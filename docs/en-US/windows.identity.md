@@ -26,3 +26,9 @@ Provides currently logged on user credential
 ### [Get-DomainSid](Get-DomainSid.md)
 Returns specified domain Security Id (Sid)
 
+### [Test-IsADJoined](Test-IsADJoined.md)
+Tests if the computer belongs to domain
+
+### [Test-IsEntraJoined](Test-IsEntraJoined.md)
+Test computer Microsoft Entra Join status
+

@@ -1,8 +1,11 @@
-﻿#Requires -Modules BuildHelpers, Pester
+﻿#Requires -Modules Pester
 
 BeforeDiscovery {
     [System.Diagnostics.CodeAnalysis.SuppressMessage(
-        'PSUseDeclaredVarsMoreThanAssigments', '', Scope='*', Target='SuppressImportModule'
+        'PSUseDeclaredVarsMoreThanAssignments',
+        '',
+        Scope = '*',
+        Target = 'SuppressImportModule'
     )]
     $SuppressImportModule = $false
     . $PSScriptRoot\Shared.ps1

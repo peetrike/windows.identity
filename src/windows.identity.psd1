@@ -1,11 +1,11 @@
 ﻿@{
     ModuleToProcess   = 'windows.identity.psm1'
-    ModuleVersion     = '0.0.3'
+    ModuleVersion     = '0.1.0'
 
     GUID              = '57f17d22-6d4f-4d77-9869-dc7a1072bcce'
 
     Author            = 'Peter Wawa'
-    Copyright         = 'Copyright (c) 2024 Peter Wawa'
+    Copyright         = 'Copyright (c) 2025 Peter Wawa'
 
     Description       = 'PowerShell module for windows identities'
 
