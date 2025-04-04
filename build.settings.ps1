@@ -1,5 +1,5 @@
 ﻿#Requires -Version 5.1
-#Requires -Modules psake, BuildHelpers
+#Requires -Modules psake
 
 ###############################################################################
 # Customize these properties and tasks for your module.
@@ -14,7 +14,7 @@ Properties {
     $ManifestFileName = Split-Path -Path $ManifestPath -Leaf
 
     # The root directories for the module's docs, src and test.
-    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
     $DocsRootDir = Join-Path -Path $PSScriptRoot -ChildPath 'docs'
     $SrcRootDir = Split-Path -Path $ManifestPath -Parent
         [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
