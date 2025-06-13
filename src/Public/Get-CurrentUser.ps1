@@ -2,7 +2,7 @@
     # .EXTERNALHELP windows.identity-help.xml
     [Alias('whoami')]
     [OutputType([Security.Principal.WindowsIdentity])]
-    [OutputType([PSCustomObject], ParameterSetName = ('Privieges', 'Groups', 'User'))]
+    [OutputType([PSCustomObject], ParameterSetName = ('Privileges', 'Groups', 'User'))]
     [CmdletBinding(
         DefaultParameterSetName = 'All'
     )]
