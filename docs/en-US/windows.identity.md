@@ -29,6 +29,9 @@ Returns specified domain Security Id (Sid)
 ### [Test-IsADJoined](Test-IsADJoined.md)
 Tests if the computer belongs to domain
 
+### [Test-IsAdmin](Test-IsAdmin.md)
+Tells whether the current user is an administrator.
+
 ### [Test-IsEntraJoined](Test-IsEntraJoined.md)
 Test computer Microsoft Entra Join status
 
