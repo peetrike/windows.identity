@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+## [0.3.0] 2026-05-29
+
+### Changed
+
+- Test-IsAdmin: Added support for non-Windows platforms
+
 ## [0.2.0] 2025-06-13
 
 ### Added
